@@ -26,6 +26,7 @@ products(filters: {slug :{eq: $slug}}){
     attributes{
       title
       slug
+      color
       description
       price
       image{

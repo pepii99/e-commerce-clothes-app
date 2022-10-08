@@ -39,6 +39,20 @@
     "price": {
       "type": "float",
       "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "clothes_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::clothes-category.clothes-category"
     }
   }
 }

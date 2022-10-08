@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clothes_categories",
+  "info": {
+    "singularName": "clothes-category",
+    "pluralName": "clothes-categories",
+    "displayName": "ClothesCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "string"
+    }
+  }
+}

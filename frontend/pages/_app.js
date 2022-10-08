@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }) {
     <StateContext>
       <Provider value={client}>
         <Nav />
-
         <Component {...pageProps} />
       </Provider>
     </StateContext>
