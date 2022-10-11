@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Details = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 5rem;
-
+  margin: 5% 10%;
   img {
     width: 30%;
   }
@@ -18,9 +17,10 @@ export const ProductInfo = styled.div`
   h3 {
     color: var(--secondary);
     margin-bottom: 1rem;
+    text-transform: uppercase;
   }
   p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.4rem;
   }
   button {
@@ -44,7 +44,6 @@ export const ProductDescription = styled.div`
   width: 20%;
   align-self: flex-end;
   margin-bottom: 5%;
-
   h3 {
     margin-bottom: 1rem;
   }

@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const MenuItems = styled.button`
+  background: none;
+  border: none;
+  height: 30px;
+`;
 export const NavLogo = styled.div`
   svg {
     margin-bottom: 1rem;
@@ -19,7 +24,7 @@ export const NavStyles = styled.div`
   }
   a {
     font-size: 4.2rem;
-    color: white;
+    color: black;
     margin-left: 5rem;
   }
 `;
@@ -37,12 +42,13 @@ export const NavItems = styled.div`
     align-items: center;
   }
   h3 {
-    color: white;
+    color: black;
     font-size: 1rem;
     padding: 0.25rem;
   }
   svg {
     font-size: 1.3rem;
+    color: black;
   }
   span {
     background: #ff2626;

@@ -1,19 +1,32 @@
 import Link from 'next/link';
 import { FiShoppingBag } from 'react-icons/fi';
 import { HiMenu } from 'react-icons/hi';
-import { NavStyles, NavItems, NavLogo } from '../styles/navStyles';
+import { NavStyles, NavItems, NavLogo, MenuItems } from '../styles/navStyles';
 import { Cart } from './Cart';
 import { useStateContext } from '../lib/context';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Menu } from './Menu';
+import { useRouter } from 'next/router';
 
 const Nav = () => {
-  const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const { showCart, setShowCart, totalQuantities, showMenu, setShowMenu } =
+    useStateContext();
+
+  const style = {
+    color: useRouter().asPath === '/' ? 'white' : 'black',
+  };
 
   return (
     <NavStyles>
       <NavLogo>
-        <HiMenu></HiMenu>
-        <Link href={'/'}>Relair.</Link>
+        <MenuItems onClick={() => setShowMenu(true)}>
+          <HiMenu style={style}></HiMenu>
+        </MenuItems>
+        {showMenu && <Menu />}
+
+        <Link href={'/'}>
+          <a style={style}>Relair.</a>
+        </Link>
       </NavLogo>
 
       <NavItems>
@@ -23,8 +36,8 @@ const Nav = () => {
               {totalQuantities}
             </motion.span>
           )}
-          <FiShoppingBag></FiShoppingBag>
-          <h3>Cart</h3>
+          <FiShoppingBag style={style}></FiShoppingBag>
+          <h3 style={style}>Cart</h3>
         </div>
       </NavItems>
       <AnimatePresence>{showCart && <Cart />}</AnimatePresence>

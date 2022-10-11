@@ -32,11 +32,11 @@ const ProductDetails = () => {
 
   //Extract data
   const productObject = data.products.data[0].attributes;
-  console.log(productObject);
+
   const { title, description, image, color, price } = productObject;
 
   return (
-    <div>
+    <>
       <Details>
         <ProductDescription>
           <h3>Materials and Origin</h3>
@@ -76,9 +76,7 @@ const ProductDetails = () => {
           <Buy onClick={() => onAdd(productObject, qty)}>Add to Cart</Buy>
         </ProductInfo>
       </Details>
-      <div>Similar items</div>
-      <img src={image.data.attributes.formats.medium.url} alt='{title}' />
-    </div>
+    </>
   );
 };
 

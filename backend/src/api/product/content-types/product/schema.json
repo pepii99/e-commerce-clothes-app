@@ -16,7 +16,7 @@
       "type": "string",
       "required": true,
       "unique": true,
-      "maxLength": 15,
+      "maxLength": 30,
       "minLength": 1
     },
     "description": {

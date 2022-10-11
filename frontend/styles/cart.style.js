@@ -39,6 +39,10 @@ export const Card = styled(motion.div)`
 
 export const CardInfo = styled(motion.div)`
   width: 50%;
+
+  h3 {
+    text-transform: uppercase;
+  }
   div {
     display: flex;
     justify-content: space-between;
@@ -46,8 +50,6 @@ export const CardInfo = styled(motion.div)`
 `;
 
 export const EmptyStyle = styled(motion.div)`
-  /* position: absolute;
-  top: 0; */
   transform: translate(-50%, 0%);
   display: flex;
   flex-direction: column;

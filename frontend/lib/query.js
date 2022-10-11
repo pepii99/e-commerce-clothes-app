@@ -40,3 +40,30 @@ products(filters: {slug :{eq: $slug}}){
   }
 }
 }`;
+
+export const GET_PRODUCTS_QUERY = `
+query getProducts($type:String!){
+  products(filters: {clothes_category: {type: {eq: $type}}}){
+    data{
+      attributes{
+        title
+        slug
+        price
+        image{
+          data{
+            attributes{
+              formats
+            }
+          }
+        }
+        clothes_category{
+          data{
+            attributes{
+            type
+            }
+          }
+        }
+      }
+    }
+  }
+}`;

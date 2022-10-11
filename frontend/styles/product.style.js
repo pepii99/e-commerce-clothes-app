@@ -1,18 +1,31 @@
 import styled from 'styled-components';
 
 export const ProductStyle = styled.div`
-  background-color: white;
   position: relative;
   display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
+  justify-content: center;
+  margin-bottom: 5rem;
+  flex-direction: row;
+`;
 
+export const ProductImage = styled.div`
   img {
-    width: 100%;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
   }
+`;
+
+export const ProductInfo = styled.div`
+  margin-left: 1rem;
+  width: 10%;
 
   h2 {
-    padding: 0.5rem 0rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-size: 0.8rem;
   }
 `;
