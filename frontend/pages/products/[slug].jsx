@@ -22,7 +22,7 @@ const ProductDetails = () => {
 
   // //Extract data
   const productObject = data.products.data;
-  console.log(productObject);
+
   return (
     <Gallery>
       {productObject.map((product) => (

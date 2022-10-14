@@ -52,7 +52,7 @@ export const Menu = () => {
           <MenuItems
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.2 }}
           >
             <Link href={'/products/coats'}>Coats</Link>
             <Link href={'/products/jeans'}>Jeans</Link>

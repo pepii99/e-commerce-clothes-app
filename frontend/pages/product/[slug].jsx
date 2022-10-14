@@ -28,7 +28,7 @@ const ProductDetails = () => {
 
   //Checks for the data coming in
   if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no... {error.message}</p>;
+  if (error) return <p>Oh no... {error}</p>;
 
   //Extract data
   const productObject = data.products.data[0].attributes;

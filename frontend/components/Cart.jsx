@@ -11,6 +11,7 @@ import {
   Cards,
 } from '../styles/cart.style';
 import { Quantity } from '../styles/productDetails.style';
+import getStripe from '../lib/getStripe';
 
 //Animation Variants
 const card = {
@@ -32,6 +33,19 @@ const cards = {
 export const Cart = () => {
   const { cartItems, setShowCart, onAdd, onRemove, totalPrice } =
     useStateContext();
+
+  //Payment
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cartItems),
+    });
+
+    const data = await response.json();
+    await stripe.redirectToCheckout({ sessionId: data.id });
+  };
 
   return (
     <CartWrapper
@@ -87,7 +101,7 @@ export const Cart = () => {
         {cartItems.length >= 1 && (
           <Checkout layout>
             <h3>Subtotal: {totalPrice.toFixed(2)}$</h3>
-            <button>Purchase</button>
+            <button onClick={handleCheckout}>Purchase</button>
           </Checkout>
         )}
       </CartStyle>

@@ -7,10 +7,14 @@ import { useStateContext } from '../lib/context';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu } from './Menu';
 import { useRouter } from 'next/router';
+import User from './User';
+import { useUser } from '@auth0/nextjs-auth0';
 
 const Nav = () => {
   const { showCart, setShowCart, totalQuantities, showMenu, setShowMenu } =
     useStateContext();
+
+  const { user, error, isLoading } = useUser();
 
   const style = {
     color: useRouter().asPath === '/' ? 'white' : 'black',
@@ -30,12 +34,14 @@ const Nav = () => {
       </NavLogo>
 
       <NavItems>
+        <User />
         <div onClick={() => setShowCart(true)}>
           {totalQuantities > 0 && (
             <motion.span animate={{ scale: 1 }} initial={{ scale: 0 }}>
               {totalQuantities}
             </motion.span>
           )}
+
           <FiShoppingBag style={style}></FiShoppingBag>
           <h3 style={style}>Cart</h3>
         </div>

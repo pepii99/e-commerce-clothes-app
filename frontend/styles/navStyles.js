@@ -31,16 +31,19 @@ export const NavStyles = styled.div`
 
 export const NavItems = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  cursor: pointer;
 
   div {
-    margin-left: 3rem;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  div:last-child {
+    margin-left: 1rem;
+  }
+
   h3 {
     color: black;
     font-size: 1rem;
